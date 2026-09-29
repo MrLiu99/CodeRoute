@@ -1,0 +1,1 @@
+clamp accepts optional lower/upper bounds. Zero is a valid bound; only None means absent. Preserve values already within bounds.

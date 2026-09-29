@@ -1,0 +1,1 @@
+read_config must return {} for blank or whitespace-only strings. Preserve normal JSON parsing and errors for malformed nonblank input.

@@ -1,0 +1,31 @@
+{
+  "id": "11_layered_settings",
+  "difficulty": "extended",
+  "reference_edits": [
+    {
+      "path": "merge.py",
+      "old": "def merge(base, override):",
+      "new": "from copy import deepcopy\n\ndef merge(base, override):"
+    },
+    {
+      "path": "merge.py",
+      "old": "result = base.copy()",
+      "new": "result = deepcopy(base)"
+    },
+    {
+      "path": "merge.py",
+      "old": "result[key].update(value)",
+      "new": "result[key] = merge(result[key], value)"
+    },
+    {
+      "path": "merge.py",
+      "old": "result[key] = value",
+      "new": "result[key] = deepcopy(value)"
+    },
+    {
+      "path": "settings.py",
+      "old": "        result['enabled'] = bool(environ['APP_ENABLED'])",
+      "new": "        value = environ['APP_ENABLED'].strip().lower()\n        if value not in {'true', 'false'}:\n            raise ValueError('invalid boolean')\n        result['enabled'] = value == 'true'"
+    }
+  ]
+}

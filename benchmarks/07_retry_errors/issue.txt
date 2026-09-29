@@ -1,0 +1,1 @@
+retry retries OSError up to attempts total calls, returns the first successful result, and re-raises the last OSError if exhausted. Other exceptions must propagate immediately. attempts below 1 remains invalid.

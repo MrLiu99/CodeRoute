@@ -1,0 +1,1 @@
+page_items uses one-based page numbers. Page 1 starts at the first item. Keep the existing validation for nonpositive page or size, and return [] beyond the end.

@@ -1,0 +1,16 @@
+{
+  "id": "08_weighted_mean",
+  "difficulty": "medium",
+  "reference_edits": [
+    {
+      "path": "stats.py",
+      "old": "    return sum(v * w",
+      "new": "    if sum(weights) == 0:\n        raise ValueError('zero total weight')\n    return sum(v * w"
+    },
+    {
+      "path": "stats.py",
+      "old": "/ len(values)",
+      "new": "/ sum(weights)"
+    }
+  ]
+}

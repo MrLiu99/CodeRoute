@@ -1,0 +1,11 @@
+{
+  "id": "05_falsey_cache",
+  "difficulty": "medium",
+  "reference_edits": [
+    {
+      "path": "cache.py",
+      "old": "if not value:",
+      "new": "if key not in self.data:"
+    }
+  ]
+}

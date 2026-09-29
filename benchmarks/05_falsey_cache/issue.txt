@@ -1,0 +1,1 @@
+Cache.get_or_compute must return cached values even when they are 0, False, empty string, or None. Compute only for absent keys and cache the computed result.

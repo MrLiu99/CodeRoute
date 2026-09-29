@@ -1,0 +1,1 @@
+read_config should return an empty dictionary for empty or whitespace-only configuration text. Valid JSON must still parse normally, and malformed nonblank JSON must still raise JSONDecodeError.

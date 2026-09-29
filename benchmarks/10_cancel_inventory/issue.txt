@@ -1,0 +1,1 @@
+Inventory.cancel restores the seats from a cancelled booking. Cancelling an unknown or already-cancelled booking is a no-op. Keep booking capacity checks and reject duplicate booking IDs without changing inventory.

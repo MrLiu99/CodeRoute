@@ -1,0 +1,16 @@
+{
+  "id": "14_streaming_csv",
+  "difficulty": "hard",
+  "reference_edits": [
+    {
+      "path": "decoder.py",
+      "old": "def decode_chunks(chunks):\n    for chunk in chunks:\n        yield chunk.decode('utf-8')\n",
+      "new": "import codecs\n\ndef decode_chunks(chunks):\n    decoder = codecs.getincrementaldecoder('utf-8-sig')()\n    for chunk in chunks:\n        yield decoder.decode(chunk)\n    tail = decoder.decode(b'', final=True)\n    if tail:\n        yield tail\n"
+    },
+    {
+      "path": "records.py",
+      "old": "def parse_records(parts):\n    for part in parts:\n        for line in part.splitlines():\n            if line:\n                yield [field or None for field in line.split(',')]\n",
+      "new": "def parse_records(parts):\n    fields, text = [], []\n    state = 'start'\n    after_cr = False\n    for part in parts:\n        for char in part:\n            if after_cr:\n                after_cr = False\n                if char == '\\n':\n                    continue\n            if state == 'quoted':\n                if char == '\"':\n                    state = 'closed'\n                else:\n                    text.append(char)\n                continue\n            if state == 'closed' and char == '\"':\n                text.append('\"')\n                state = 'quoted'\n                continue\n            if char == ',':\n                fields.append(''.join(text) if state != 'start' else None)\n                text, state = [], 'start'\n            elif char in '\\r\\n':\n                if state != 'start' or fields:\n                    fields.append(''.join(text) if state != 'start' else None)\n                    yield fields\n                fields, text, state = [], [], 'start'\n                after_cr = char == '\\r'\n            elif state == 'closed':\n                raise ValueError('characters after closing quote')\n            elif char == '\"':\n                if state != 'start':\n                    raise ValueError('quote in unquoted field')\n                state = 'quoted'\n            else:\n                text.append(char)\n                state = 'bare'\n    if state == 'quoted':\n        raise ValueError('unterminated quoted field')\n    if state != 'start' or fields:\n        fields.append(''.join(text) if state != 'start' else None)\n        yield fields\n"
+    }
+  ]
+}

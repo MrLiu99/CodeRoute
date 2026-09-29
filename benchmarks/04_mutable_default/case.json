@@ -1,0 +1,11 @@
+{
+  "id": "04_mutable_default",
+  "difficulty": "easy",
+  "reference_edits": [
+    {
+      "path": "tags.py",
+      "old": "def add_tag(tag, tags=[]):",
+      "new": "def add_tag(tag, tags=None):\n    if tags is None:\n        tags = []"
+    }
+  ]
+}

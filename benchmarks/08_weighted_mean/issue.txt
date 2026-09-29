@@ -1,0 +1,1 @@
+weighted_mean divides the sum of value*weight by the sum of weights. Mismatched/empty inputs and a zero total weight must raise ValueError. Zero individual weights are allowed.

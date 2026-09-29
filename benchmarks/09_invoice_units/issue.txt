@@ -1,0 +1,1 @@
+invoice_total takes item prices in cents and returns total dollars including tax. tax_amount takes dollars and a decimal rate; preserve this helper contract. Empty invoices total zero.

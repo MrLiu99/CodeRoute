@@ -1,0 +1,11 @@
+{
+  "id": "06_stable_unique",
+  "difficulty": "easy",
+  "reference_edits": [
+    {
+      "path": "unique.py",
+      "old": "sorted(set(items))",
+      "new": "list(dict.fromkeys(items))"
+    }
+  ]
+}

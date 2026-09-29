@@ -1,0 +1,16 @@
+[
+  "../benchmarks/01_blank_config",
+  "../benchmarks/02_zero_bound",
+  "../benchmarks/03_pagination",
+  "../benchmarks/04_mutable_default",
+  "../benchmarks/05_falsey_cache",
+  "../benchmarks/06_stable_unique",
+  "../benchmarks/07_retry_errors",
+  "../benchmarks/08_weighted_mean",
+  "../benchmarks/09_invoice_units",
+  "../benchmarks/10_cancel_inventory",
+  "../benchmarks_extended/11_layered_settings",
+  "../benchmarks_revised/12_atomic_transfers_v2",
+  "../benchmarks_extended/13_tenant_cache",
+  "../benchmarks_streaming/14_streaming_csv"
+]

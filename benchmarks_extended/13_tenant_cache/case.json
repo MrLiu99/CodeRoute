@@ -1,0 +1,31 @@
+{
+  "id": "13_tenant_cache",
+  "difficulty": "extended",
+  "reference_edits": [
+    {
+      "path": "keys.py",
+      "old": "return key",
+      "new": "return (tenant, key)"
+    },
+    {
+      "path": "expiry.py",
+      "old": "now > expires_at",
+      "new": "now >= expires_at"
+    },
+    {
+      "path": "cache.py",
+      "old": "from keys import cache_key",
+      "new": "from copy import deepcopy\nfrom keys import cache_key"
+    },
+    {
+      "path": "cache.py",
+      "old": "= (value, now + ttl)",
+      "new": "= (deepcopy(value), now + ttl)"
+    },
+    {
+      "path": "cache.py",
+      "old": "return entry[0]",
+      "new": "return deepcopy(entry[0])"
+    }
+  ]
+}

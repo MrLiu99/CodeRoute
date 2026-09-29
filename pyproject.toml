@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coderoute"
+version = "0.1.0"
+description = "A small, observable Python repair harness"
+requires-python = ">=3.9"
+dependencies = ["pytest>=7,<9"]
+
+[project.scripts]
+coderoute = "coderoute.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

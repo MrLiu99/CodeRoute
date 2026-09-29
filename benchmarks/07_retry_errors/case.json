@@ -1,0 +1,11 @@
+{
+  "id": "07_retry_errors",
+  "difficulty": "medium",
+  "reference_edits": [
+    {
+      "path": "retry.py",
+      "old": "except ValueError:",
+      "new": "except OSError:"
+    }
+  ]
+}

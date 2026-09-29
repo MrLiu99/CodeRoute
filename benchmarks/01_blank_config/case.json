@@ -1,0 +1,11 @@
+{
+  "id": "01_blank_config",
+  "difficulty": "easy",
+  "reference_edits": [
+    {
+      "path": "config_reader.py",
+      "old": "    return json.loads(text)",
+      "new": "    if not text.strip():\n        return {}\n    return json.loads(text)"
+    }
+  ]
+}

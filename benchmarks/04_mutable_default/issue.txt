@@ -1,0 +1,1 @@
+add_tag must create a fresh list when tags is omitted. When a list is explicitly supplied, append to and return that same list.

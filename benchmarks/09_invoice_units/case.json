@@ -1,0 +1,11 @@
+{
+  "id": "09_invoice_units",
+  "difficulty": "medium",
+  "reference_edits": [
+    {
+      "path": "invoice.py",
+      "old": "tax_amount(subtotal, rate)",
+      "new": "tax_amount(subtotal / 100, rate)"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+load_settings must recursively merge nested overrides without modifying or sharing mutable lists/dicts with defaults or overrides. APP_ENABLED accepts case-insensitive true/false with surrounding whitespace; false must not become true. Missing environment value keeps the merged setting; invalid values raise ValueError.

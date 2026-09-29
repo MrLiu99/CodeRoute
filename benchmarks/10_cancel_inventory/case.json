@@ -1,0 +1,11 @@
+{
+  "id": "10_cancel_inventory",
+  "difficulty": "medium",
+  "reference_edits": [
+    {
+      "path": "inventory.py",
+      "old": "        seats = self.bookings.pop(booking_id, 0)\n        self.available -= seats",
+      "new": "        seats = self.bookings.pop(booking_id, 0)\n        self.available += seats"
+    }
+  ]
+}

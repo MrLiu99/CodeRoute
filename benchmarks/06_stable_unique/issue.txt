@@ -1,0 +1,1 @@
+unique returns hashable items in first-occurrence order, removes duplicates, and does not modify the input sequence.

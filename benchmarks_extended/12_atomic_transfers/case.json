@@ -1,0 +1,16 @@
+{
+  "id": "12_atomic_transfers",
+  "difficulty": "extended",
+  "reference_edits": [
+    {
+      "path": "ledger.py",
+      "old": "    if accounts[source] < amount:",
+      "new": "    if amount <= 0:\n        raise ValueError('amount must be positive')\n    if accounts[source] < amount:"
+    },
+    {
+      "path": "batch.py",
+      "old": "    for source, destination, amount in transfers:\n        transfer(accounts, source, destination, amount)",
+      "new": "    working = accounts.copy()\n    for source, destination, amount in transfers:\n        transfer(working, source, destination, amount)\n    accounts.clear()\n    accounts.update(working)"
+    }
+  ]
+}

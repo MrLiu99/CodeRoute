@@ -1,0 +1,11 @@
+{
+  "id": "03_pagination",
+  "difficulty": "easy",
+  "reference_edits": [
+    {
+      "path": "pagination.py",
+      "old": "start = page * size",
+      "new": "start = (page - 1) * size"
+    }
+  ]
+}
